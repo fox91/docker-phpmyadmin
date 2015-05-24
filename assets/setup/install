@@ -7,9 +7,9 @@ function rand() {
 	echo
 }
 
-tar -C /var/www -xzf /tmp/RELEASE_4_4_2.tar.gz
+tar -C /var/www -xzf /tmp/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz
 rm -rf /var/www/html
-mv /var/www/phpmyadmin-RELEASE_4_4_2 /var/www/html
+mv /var/www/phpMyAdmin-${PHPMYADMIN_VERSION}-english /var/www/html
 
 # configure phpMyAdmin
 cat > /var/www/html/config.inc.php <<EOF

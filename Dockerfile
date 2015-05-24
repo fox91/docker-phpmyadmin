@@ -1,6 +1,8 @@
 FROM fox91/nginx-php:latest
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
+ENV PHPMYADMIN_VERSION 4.4.7
+
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       php5-mcrypt=${PHP_VERSION} \
@@ -11,10 +13,10 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD https://github.com/phpmyadmin/phpmyadmin/archive/RELEASE_4_4_2.tar.gz /tmp/RELEASE_4_4_2.tar.gz
+ADD http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz/download /tmp/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz
 
 COPY assets/setup/ /app/setup/
 RUN chmod 755 /app/setup/install
 RUN /app/setup/install
 
-RUN rm -rf /tmp/* /var/tmp/*
+RUN rm -rf /tmp/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz
