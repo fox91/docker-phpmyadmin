@@ -11,7 +11,7 @@ RUN apt-get update \
       --no-install-recommends \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD http://sourceforge.net/projects/phpmyadmin/files/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz/download /tmp/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz
+ADD https://files.phpmyadmin.net/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz /tmp/phpMyAdmin-${PHPMYADMIN_VERSION}-english.tar.gz
 
 COPY assets/setup/ /app/setup/
 RUN chmod 755 /app/setup/install
