@@ -1,7 +1,7 @@
 FROM fox91/nginx-php:latest
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
-ENV PHPMYADMIN_VERSION 4.4.15
+ENV PHPMYADMIN_VERSION 4.5.0.2
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
