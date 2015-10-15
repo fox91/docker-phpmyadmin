@@ -39,10 +39,10 @@ ENV PHPMYADMIN_VERSION 4.4.15
 COPY bin /usr/bin
 
 RUN set -x \
-	&& cd /tmp \
-	&& curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" -o phpMyAdmin.tar.gz \
-	&& curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" -o phpMyAdmin.tar.gz.asc \
-	&& gpg --verify phpMyAdmin.tar.gz.asc \
-	&& tar -xzC /usr/src/myapp/public --strip-components=1 -f phpMyAdmin.tar.gz \
-	&& rm phpMyAdmin.tar.gz* \
-	&& bash /usr/bin/phpmyadmin-setup
+ && cd /tmp \
+ && curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" -o phpMyAdmin.tar.gz \
+ && curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" -o phpMyAdmin.tar.gz.asc \
+ && gpg --verify phpMyAdmin.tar.gz.asc \
+ && tar -xzC /usr/src/myapp/public --strip-components=1 -f phpMyAdmin.tar.gz \
+ && rm phpMyAdmin.tar.gz* \
+ && bash /usr/bin/phpmyadmin-setup
