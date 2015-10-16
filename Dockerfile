@@ -46,3 +46,5 @@ RUN set -x \
  && tar -xzC /usr/src/myapp/public --strip-components=1 -f phpMyAdmin.tar.gz \
  && rm phpMyAdmin.tar.gz* \
  && bash /usr/bin/phpmyadmin-setup
+
+VOLUME /usr/src/myapp
