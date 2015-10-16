@@ -30,7 +30,7 @@ RUN persistentDeps=" \
      --with-vpx-dir=/usr/include/ \
      --with-freetype-dir=/usr/include/ \
      --enable-gd-native-ttf \
- && docker-php-ext-install gd mcrypt \
+ && docker-php-ext-install gd mbstring mcrypt mysqli \
  && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
