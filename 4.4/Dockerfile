@@ -34,7 +34,7 @@ RUN persistentDeps=" \
  && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHPMYADMIN_VERSION 4.4.15.2
+ENV PHPMYADMIN_VERSION 4.4.15.3
 
 COPY bin /usr/bin
 
