@@ -1,9 +1,6 @@
 FROM fox91/php:5.6.17-fpm
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
-# gpg: key 81AF644A: public key "Marc Delisle <marc@infomarc.info>" imported
-RUN gpg --keyserver pgp.mit.edu --recv-keys 81AF644A
-
 RUN persistentDeps=" \
      libfreetype6 \
      libjpeg62-turbo \
@@ -39,9 +36,11 @@ ENV PHPMYADMIN_VERSION 4.4.15.3
 COPY bin /usr/bin
 
 RUN set -x \
+ && curl -SL https://files.phpmyadmin.net/phpmyadmin.keyring \
+     | gpg --import - \
  && cd /tmp \
- && curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" -o phpMyAdmin.tar.gz \
- && curl -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" -o phpMyAdmin.tar.gz.asc \
+ && curl -o phpMyAdmin.tar.gz -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" \
+ && curl -o phpMyAdmin.tar.gz.asc -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" \
  && gpg --verify phpMyAdmin.tar.gz.asc \
  && tar -xzC /usr/src/myapp/public --strip-components=1 -f phpMyAdmin.tar.gz \
  && rm phpMyAdmin.tar.gz* \
