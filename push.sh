@@ -3,7 +3,8 @@ set -e
 set -u
 set -x
 
-docker push docker.io/fox91/phpmyadmin:4.5.3.1
+docker push docker.io/fox91/phpmyadmin:4.5.5
 docker push docker.io/fox91/phpmyadmin:4.5
 
-docker push docker.io/fox91/phpmyadmin:4.4.15.2
+docker push docker.io/fox91/phpmyadmin:4.4.15.4
+docker push docker.io/fox91/phpmyadmin:4.4
