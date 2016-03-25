@@ -3,25 +3,29 @@ set -e
 set -u
 set -x
 
-docker pull fox91/phpmyadmin:latest
 # docker build -t fox91/phpmyadmin:latest ./
-docker tag fox91/phpmyadmin:latest docker.io/fox91/phpmyadmin:4.6.0-fpm
-docker tag fox91/phpmyadmin:latest docker.io/fox91/phpmyadmin:4.6-fpm
-docker tag fox91/phpmyadmin:latest docker.io/fox91/phpmyadmin:fpm
-docker tag fox91/phpmyadmin:latest docker.io/fox91/phpmyadmin:4.6.0
-docker tag fox91/phpmyadmin:latest docker.io/fox91/phpmyadmin:4.6
+docker pull fox91/phpmyadmin:latest
+IMAGE_ID=$(docker images -q fox91/phpmyadmin:latest)
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.6.0-fpm
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.6-fpm
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:fpm
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.6.0
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.6
 
+# docker build -t fox91/phpmyadmin:4.6-apache ./
 docker pull fox91/phpmyadmin:4.6-apache
-# docker build -t fox91/phpmyadmin:4.6-apache ./4.6-apache
-docker tag fox91/phpmyadmin:4.6-apache docker.io/fox91/phpmyadmin:4.6.0-apache
-docker tag fox91/phpmyadmin:4.6-apache docker.io/fox91/phpmyadmin:apache
+IMAGE_ID=$(docker images -q fox91/phpmyadmin:4.6-apache)
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.6.0-apache
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:apache
 
+# docker build -t fox91/phpmyadmin:4.4-fpm ./
 docker pull fox91/phpmyadmin:4.4-fpm
-# docker build -t fox91/phpmyadmin:4.4-fpm ./4.4-fpm
-docker tag fox91/phpmyadmin:4.4-fpm docker.io/fox91/phpmyadmin:4.4.15.5-fpm
-docker tag fox91/phpmyadmin:4.4-fpm docker.io/fox91/phpmyadmin:4.4.15.5
-docker tag fox91/phpmyadmin:4.4-fpm docker.io/fox91/phpmyadmin:4.4
+IMAGE_ID=$(docker images -q fox91/phpmyadmin:4.4-fpm)
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.4.15.5-fpm
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.4.15.5
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.4
 
+# docker build -t fox91/phpmyadmin:4.4-apache ./
 docker pull fox91/phpmyadmin:4.4-apache
-# docker build -t fox91/phpmyadmin:4.4-apache ./4.4-apache
-docker tag fox91/phpmyadmin:4.4-apache docker.io/fox91/phpmyadmin:4.4.15.5-apache
+IMAGE_ID=$(docker images -q fox91/phpmyadmin:4.4-apache)
+docker tag "${IMAGE_ID}" fox91/phpmyadmin:4.4.15.5-apache
