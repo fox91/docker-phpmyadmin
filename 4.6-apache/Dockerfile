@@ -1,4 +1,4 @@
-FROM php:5.6.18-apache
+FROM php:5.6.19-apache
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
@@ -31,7 +31,7 @@ RUN persistentDeps=" \
  && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHPMYADMIN_VERSION 4.5.5.1
+ENV PHPMYADMIN_VERSION 4.6.0
 
 COPY bin /usr/bin
 
