@@ -1,4 +1,4 @@
-FROM php:5.6.18-apache
+FROM php:5.6.19-apache
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
