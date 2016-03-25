@@ -1,4 +1,4 @@
-FROM fox91/php:5.6.18-fpm
+FROM php:5.6.18-apache
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
@@ -42,8 +42,7 @@ RUN set -x \
  && curl -o phpMyAdmin.tar.gz -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" \
  && curl -o phpMyAdmin.tar.gz.asc -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" \
  && gpg --verify phpMyAdmin.tar.gz.asc \
- && tar -xzC /usr/src/myapp/public --strip-components=1 -f phpMyAdmin.tar.gz \
+ && tar -xzC /var/www/html --strip-components=1 -f phpMyAdmin.tar.gz \
+ && chown -R www-data:www-data /var/www/html \
  && rm phpMyAdmin.tar.gz* \
  && bash /usr/bin/phpmyadmin-setup
-
-VOLUME /usr/src/myapp
