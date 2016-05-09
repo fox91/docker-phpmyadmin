@@ -1,4 +1,4 @@
-FROM fox91/php:5.6.19-fpm
+FROM fox91/php:5.6.21-fpm
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
