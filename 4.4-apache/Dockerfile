@@ -1,4 +1,4 @@
-FROM php:5.6.21-apache
+FROM php:5.6.23-apache
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
@@ -31,7 +31,7 @@ RUN persistentDeps=" \
  && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHPMYADMIN_VERSION 4.4.15.5
+ENV PHPMYADMIN_VERSION 4.4.15.7
 
 COPY bin /usr/bin
 
@@ -39,8 +39,8 @@ RUN set -x \
  && curl -SL https://files.phpmyadmin.net/phpmyadmin.keyring \
      | gpg --import - \
  && cd /tmp \
- && curl -o phpMyAdmin.tar.gz -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" \
- && curl -o phpMyAdmin.tar.gz.asc -SL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" \
+ && curl -o phpMyAdmin.tar.gz -sSL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz" \
+ && curl -o phpMyAdmin.tar.gz.asc -sSL "https://files.phpmyadmin.net/phpMyAdmin/$PHPMYADMIN_VERSION/phpMyAdmin-$PHPMYADMIN_VERSION-english.tar.gz.asc" \
  && gpg --verify phpMyAdmin.tar.gz.asc \
  && tar -xzC /var/www/html --strip-components=1 -f phpMyAdmin.tar.gz \
  && chown -R www-data:www-data /var/www/html \
