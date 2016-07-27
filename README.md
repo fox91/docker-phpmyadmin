@@ -9,5 +9,3 @@
 
 -   [`4.6.3-fpm`, `4.6-fpm` (*2016-05-03*)](https://github.com/fox91/docker-phpmyadmin/blob/master/Dockerfile)
 -   [`4.4.15.7-fpm`, `4.4-fpm` (*2016-02-29*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.4-fpm/Dockerfile)
-
-[![](https://badge.imagelayers.io/fox91/phpmyadmin:latest.svg)](https://imagelayers.io/?images=fox91/phpmyadmin:4.6-apache,fox91/phpmyadmin:4.4-apache)
