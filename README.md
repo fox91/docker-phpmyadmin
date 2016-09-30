@@ -2,8 +2,8 @@
 
 ## Supported tags and respective `Dockerfile` links
 
--   [`4.6.3-apache`, `4.6-apache`, `latest` (*2016-06-23*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.6-apache/Dockerfile)
--   [`4.4.15.7-apache`, `4.4-apache` (*2016-06-23*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.4-apache/Dockerfile)
+-   [`4.6.4-apache`, `4.6-apache`, `latest` (*2016-08-16*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.6-apache/Dockerfile)
+-   [`4.4.15.8-apache`, `4.4-apache` (*2016-08-16*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.4-apache/Dockerfile)
 
 ## Deprecated tags and respective `Dockerfile` links
 
