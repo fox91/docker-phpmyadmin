@@ -1,4 +1,4 @@
-FROM fox91/php:5.6.21-fpm
+FROM php:5.6.29-fpm
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
@@ -31,7 +31,7 @@ RUN persistentDeps=" \
   && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHPMYADMIN_VERSION 4.4.15.7
+ENV PHPMYADMIN_VERSION 4.4.15.9
 
 COPY bin /usr/bin
 
