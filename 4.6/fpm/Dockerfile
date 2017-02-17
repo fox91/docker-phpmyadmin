@@ -1,4 +1,4 @@
-FROM php:7.0.14-fpm
+FROM php:7.0.15-fpm
 MAINTAINER Andrea Falco <fox91fox@gmail.com>
 
 RUN persistentDeps=" \
@@ -31,7 +31,7 @@ RUN persistentDeps=" \
   && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHPMYADMIN_VERSION 4.6.5.2
+ENV PHPMYADMIN_VERSION 4.6.6
 
 COPY bin /usr/bin
 
