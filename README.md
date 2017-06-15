@@ -3,7 +3,7 @@
 ## Supported tags and respective `Dockerfile` links
 
 -   [`latest`, `stable`](https://github.com/fox91/docker-phpmyadmin/blob/master/stable/apache/Dockerfile)
--   [`4.7.0-apache`, `4.7-apache` (*2017-03-29*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.7/apache/Dockerfile)
+-   [`4.7.1-apache`, `4.7-apache` (*2017-03-29*)](https://github.com/fox91/docker-phpmyadmin/blob/master/4.7/apache/Dockerfile)
 
 ## Deprecated tags and respective `Dockerfile` links
 
